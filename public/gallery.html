@@ -1,0 +1,124 @@
+cat << 'EOF' > /home/ubuntu/solardraft-agency/public/gallery.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolarDraft | Design & Drafting Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">Solar<span>Draft</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="gallery.html" class="active">Drafting Gallery</a>
+            <a href="pricing.html">Subscription Plans</a>
+            <a href="submit.html" class="btn-nav">+ Submit Project</a>
+        </div>
+    </header>
+
+    <div class="container" style="margin-top: 30px;">
+        <div class="card-panel">
+            <h2 class="section-title">Design Portfolio & Drafting Samples</h2>
+            <p class="section-sub">Filter by design software to view specialized drafting & 3D solar layout samples.</p>
+
+            <!-- Tool Filtering Tabs -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" onclick="filterGallery('all')">All Samples</button>
+                <button class="filter-btn" onclick="filterGallery('aurora')">Aurora 3D</button>
+                <button class="filter-btn" onclick="filterGallery('solargraf')">Solargraf</button>
+                <button class="filter-btn" onclick="filterGallery('autocad')">AutoCAD SLD</button>
+                <button class="filter-btn" onclick="filterGallery('helioscope')">HelioScope</button>
+            </div>
+
+            <!-- Gallery Grid with Unique Photos per Tool -->
+            <div class="gallery-grid">
+                
+                <!-- Aurora 3D Samples -->
+                <div class="gallery-card aurora">
+                    <img src="https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=800&q=80" alt="Aurora 3D Residential" onclick="openLightbox(this.src)">
+                    <div class="gallery-info">
+                        <h4>Residential 3D Roof Layout</h4>
+                        <span>Aurora Solar</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card aurora">
+                    <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=800&q=80" alt="Shading Analysis" onclick="openLightbox(this.src)">
+                    <div class="gallery-info">
+                        <h4>Complex Shading & Irradiance Scene</h4>
+                        <span>Aurora Solar</span>
+                    </div>
+                </div>
+
+                <!-- Solargraf Samples -->
+                <div class="gallery-card solargraf">
+                    <img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80" alt="Solargraf Commercial" onclick="openLightbox(this.src)">
+                    <div class="gallery-info">
+                        <h4>Commercial Sales & Permit Proposal</h4>
+                        <span>Solargraf</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card solargraf">
+                    <img src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=800&q=80" alt="Solargraf Roof Layout" onclick="openLightbox(this.src)">
+                    <div class="gallery-info">
+                        <h4>Pitch Roof Array Layout & Quotation</h4>
+                        <span>Solargraf</span>
+                    </div>
+                </div>
+
+                <!-- AutoCAD SLD Samples -->
+                <div class="gallery-card autocad">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="AutoCAD Single Line Diagram" onclick="openLightbox(this.src)">
+                    <div class="gallery-info">
+                        <h4>Electrical Single Line Diagram (SLD)</h4>
+                        <span>AutoCAD / PVSyst</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card autocad">
+                    <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80" alt="Permit Plan Set" onclick="openLightbox(this.src)">
+                    <div class="gallery-info">
+                        <h4>Full Engineering Permit Plan Set</h4>
+                        <span>AutoCAD Drafting</span>
+                    </div>
+                </div>
+
+                <!-- HelioScope Samples -->
+                <div class="gallery-card helioscope">
+                    <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=800&q=80" alt="Commercial Rooftop HelioScope" onclick="openLightbox(this.src)">
+                    <div class="gallery-info">
+                        <h4>Large Commercial Rooftop Array</h4>
+                        <span>HelioScope</span>
+                    </div>
+                </div>
+
+                <div class="gallery-card helioscope">
+                    <img src="https://images.unsplash.com/photo-1548337138-e87d889cc369?auto=format&fit=crop&w=800&q=80" alt="Ground Mount Array" onclick="openLightbox(this.src)">
+                    <div class="gallery-info">
+                        <h4>Utility Scale Ground-Mount System</h4>
+                        <span>HelioScope / PVSyst</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX POPUP MODAL -->
+    <div id="lightboxModal" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightboxImg" class="lightbox-content" src="" alt="Expanded Image View">
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SolarDraft Agency. All Rights Reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+EOF

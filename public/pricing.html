@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolarDraft | Subscription Plans</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">Solar<span>Draft</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Drafting Gallery</a>
+            <a href="pricing.html" class="active">Subscription Plans</a>
+            <a href="submit.html" class="btn-nav">+ Submit Project</a>
+        </div>
+    </header>
+
+    <div class="container" style="margin-top: 30px;">
+        <div class="card-panel">
+            <h2 class="section-title" style="text-align: center;">Choose Your Drafting Plan</h2>
+            <p class="section-sub" style="text-align: center;">Scalable design & drafting packages for residential and commercial solar installers.</p>
+
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                
+                <!-- Starter Plan -->
+                <div style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 25px; width: 300px;">
+                    <h3 style="color: #fff; margin-top: 0;">Solar Drafting Lite</h3>
+                    <h2 style="color: #00d2ff; margin: 15px 0;">$299 <span style="font-size: 0.9rem; color: #888;">/mo</span></h2>
+                    <ul style="color: #ccc; padding-left: 20px; line-height: 1.8;">
+                        <li>Up to 10 Residential 3D Models</li>
+                        <li>Aurora & Solargraf Support</li>
+                        <li>48-Hour Turnaround</li>
+                        <li>Single Line Diagrams (SLD)</li>
+                    </ul>
+                    <button class="btn-nav" style="width: 100%; margin-top: 20px;" onclick="selectPlan('Solar Drafting Lite - $299/mo')">Select Lite Plan</button>
+                </div>
+
+                <!-- Pro Plan -->
+                <div style="background: #1e293b; border: 2px solid #00d2ff; border-radius: 12px; padding: 25px; width: 300px; position: relative;">
+                    <span style="position: absolute; top: -12px; right: 20px; background: #00d2ff; color: #000; padding: 2px 10px; border-radius: 10px; font-size: 0.8rem; font-weight: bold;">POPULAR</span>
+                    <h3 style="color: #fff; margin-top: 0;">EPC Growth</h3>
+                    <h2 style="color: #00d2ff; margin: 15px 0;">$699 <span style="font-size: 0.9rem; color: #888;">/mo</span></h2>
+                    <ul style="color: #ccc; padding-left: 20px; line-height: 1.8;">
+                        <li>Up to 30 Designs / Month</li>
+                        <li>Commercial & Residential</li>
+                        <li>HelioScope & AutoCAD Permit Sets</li>
+                        <li>24-Hour Turnaround</li>
+                        <li>Dedicated Draftsman</li>
+                    </ul>
+                    <button class="btn-nav" style="width: 100%; margin-top: 20px;" onclick="selectPlan('EPC Growth - $699/mo')">Select Pro Plan</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- SUBSCRIPTION MODAL POPUP -->
+    <div id="subModal" class="lightbox" style="display: none;">
+        <div style="background: #1e293b; padding: 30px; border-radius: 10px; width: 90%; max-width: 450px; position: relative;">
+            <span class="lightbox-close" onclick="closeSubModal()">&times;</span>
+            <h3 style="color: #fff; margin-top: 0;">Subscribe to <span id="selectedPlanTitle" style="color: #00d2ff;"></span></h3>
+            <p style="color: #aaa; font-size: 0.9rem;">Fill in your details and our team will get in touch to activate your drafting portal instantly.</p>
+            
+            <form id="subForm" onsubmit="handleSubSubmit(event)">
+                <input type="hidden" id="planInput" name="plan">
+                <div style="margin-bottom: 15px;">
+                    <label style="color: #ccc; display: block; margin-bottom: 5px;">Company Name</label>
+                    <input type="text" id="companyName" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #334155; background: #0f172a; color: #fff;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="color: #ccc; display: block; margin-bottom: 5px;">Work Email</label>
+                    <input type="email" id="workEmail" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #334155; background: #0f172a; color: #fff;">
+                </div>
+                <button type="submit" class="btn-nav" style="width: 100%;">Confirm Subscription Request</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SolarDraft Agency. All Rights Reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+EOF
